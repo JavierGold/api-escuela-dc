@@ -14,10 +14,10 @@ const MateriaSchema = new Schema({
     required: true,
   },
   dia: {
-    type: Array,
+    type: String,
   },
   hora: {
-    type: Array,
+    type: String,
   },
   maestroId: Schema.Types.ObjectId,
 });

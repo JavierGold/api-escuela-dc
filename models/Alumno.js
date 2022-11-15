@@ -19,7 +19,7 @@ const AlumnoSchema = new Schema({
   },
   correo: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
   },
   matricula: {
@@ -30,6 +30,22 @@ const AlumnoSchema = new Schema({
     type: String,
     required: true,
   },
+  carrera: {
+    type: String,
+    required: true,
+  },
+  semestre: {
+    type: Number,
+    required: true,
+  },
+  group: {
+    type: String,
+    required: true,
+  },
+  comentario: {
+    type: String,
+    required: false,
+  },
   materias: [
     {
       materiaId: Schema.Types.ObjectId,
@@ -39,6 +55,7 @@ const AlumnoSchema = new Schema({
           parcial: Number,
         },
       ],
+      final:Number
     },
   ],
 });

@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const MaestroSchema = new mongoose.Schema({
+  nombreUsuario:{
+    type: String,
+    required: true,
+    unique: true,
+  },
   nombre: {
     type: String,
     required: true
@@ -19,7 +24,7 @@ const MaestroSchema = new mongoose.Schema({
   },
   correo: {
     type: String,
-    required: true,
+    required: false,
     unique: true
   },
   matricula: {

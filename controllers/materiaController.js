@@ -105,8 +105,8 @@ materiaController.getMateriaByIdTeacher = async (req, res) => {
         nombre: 1,
         foto: 1,
         descripcion: 1,
-        dia: { $arrayElemAt: ["$dia", 0] },
-        hora: { $arrayElemAt: ["$hora", 0] },
+        dia: 1,
+        hora: 1,
         idMaestro: "$maestroId",
         numeroAlumnos: { $size: "$alumno"},
       });

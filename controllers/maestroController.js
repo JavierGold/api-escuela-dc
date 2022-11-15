@@ -3,11 +3,11 @@ const Maestro = require("../models/Maestro");
 const maestroController = {};
 
 maestroController.getMaestroByPasswordAndEmail = async (req, res) => {
-  const { email, password } = req.params;
+  const { nombreUsuario, password } = req.params;
 
   try {
     let maestros = await Maestro.findOne(
-      { correo: email, password: password },
+      { nombreUsuario: nombreUsuario, password: password },
       { materias: 0 }
     );
 

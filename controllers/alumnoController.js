@@ -27,6 +27,10 @@ alumnoController.getAlumnoByMateriaId = async (req, res) => {
         apellidom: 1,
         correo: 1,
         matricula: 1,
+        carrera:1,
+        semestre:1,
+        group:1,
+        comentario:1,
         materiaId: '$materias.materiaId',
         cal1: {
           $arrayElemAt: ["$materias.calificaciones.calificacion", 0]
@@ -121,7 +125,12 @@ alumnoController.post = async (req, res) => {
       "correo",
       "matricula",
       "password",
+      "carrera",
+      "semestre",
+      "group",
+      "comentario",
       "materias",
+      
     ];
 
     Object.keys(req.body).forEach((key) => {
@@ -153,7 +162,7 @@ alumnoController.updateGrades = async (req, res) => {
   const {
     cal1,
     cal2,
-    cal3
+    
   } = req.body
 
   try {
@@ -163,17 +172,18 @@ alumnoController.updateGrades = async (req, res) => {
     }, {
       calificacion: cal2,
       parcial: 2
-    }, {
-      calificacion: cal3,
-      parcial: 3
     }]
+
+    let promedio = (calificaciones[0].calificacion+calificaciones[1].calificacion)/2
+
 
     let alumnos = await Alumno.findOneAndUpdate({
       _id: idAlumno,
       "materias.materiaId": Types.ObjectId(idMat)
     }, {
       "$set": {
-        "materias.$.calificaciones": calificaciones
+        "materias.$.calificaciones": calificaciones,
+        "materias.$.final": promedio
       }
     });
     res.json("Se actualizaron las calificaciones correctamente");
@@ -200,6 +210,10 @@ alumnoController.patch = async (req, res) => {
       "correo",
       "matricula",
       "password",
+      "carrera",
+      "semestre",
+      "group",
+      "comentario",
       "materias",
     ];
 
