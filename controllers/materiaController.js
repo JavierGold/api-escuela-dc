@@ -13,8 +13,8 @@ materiaController.getMateriaByTeacherId = async (req, res) => {
         nombre: 1,
         foto: 1,
         descripcion: 1,
-        dia: { $arrayElemAt: ["$dia", 0] },
-        hora: { $arrayElemAt: ["$hora", 0] },
+        dia: 1,
+        hora: 1,
         maestroId: 1
       });
 
@@ -40,8 +40,8 @@ materiaController.getMateriaByStudentId = async (req, res) => {
         nombre: 1,
         foto: 1,
         descripcion: 1,
-        dia: { $arrayElemAt: ["$dia", 0] },
-        hora: { $arrayElemAt: ["$hora", 0] },
+        dia: 1,
+        hora: 1,
         maestroId: 1,
         alumnoId: "$alumno._id",
       });
@@ -76,8 +76,8 @@ materiaController.getMateriaByIdAndStudenId = async (req, res) => {
         nombre: "$materiasDesc.nombre",
         foto: "$materiasDesc.foto",
         descripcion: "$materiasDesc.descripcion",
-        hora: { $arrayElemAt: ["$materiasDesc.hora", 0] },
-        dia: { $arrayElemAt: ["$materiasDesc.dia", 0] },
+        hora: 1,
+        dia: 1,
         cal1: { $arrayElemAt: ["$materias.calificaciones.calificacion", 0] },
         cal2: { $arrayElemAt: ["$materias.calificaciones.calificacion", 1] },
         cal3: { $arrayElemAt: ["$materias.calificaciones.calificacion", 2] },
