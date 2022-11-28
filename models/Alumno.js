@@ -3,19 +3,19 @@ const { Schema, model } = require("mongoose");
 const AlumnoSchema = new Schema({
   nombre: {
     type: String,
-    required: true,
+    required: false,
   },
   foto: {
     type: String,
-    required: true,
+    required: false,
   },
   apellidop: {
     type: String,
-    required: true,
+    required: false,
   },
   apellidom: {
     type: String,
-    required: true,
+    required: false,
   },
   correo: {
     type: String,
@@ -24,23 +24,23 @@ const AlumnoSchema = new Schema({
   },
   matricula: {
     type: String,
-    required: true,
+    required: false,
   },
  password: {
     type: String,
-    required: true,
+    required: false,
   },
   carrera: {
     type: String,
-    required: true,
+    required: false,
   },
   semestre: {
     type: Number,
-    required: true,
+    required: false,
   },
   group: {
     type: String,
-    required: true,
+    required: false,
   },
   comentario: {
     type: String,

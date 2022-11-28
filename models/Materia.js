@@ -3,15 +3,15 @@ const { Schema, model } = require("mongoose");
 const MateriaSchema = new Schema({
   nombre: {
     type: String,
-    required: true,
+    required: false,
   },
   foto: {
     type: String,
-    required: true,
+    required: false,
   },
   descripcion: {
     type: String,
-    required: true,
+    required: false,
   },
   dia: {
     type: String,

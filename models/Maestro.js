@@ -8,19 +8,19 @@ const MaestroSchema = new mongoose.Schema({
   },
   nombre: {
     type: String,
-    required: true
+    required: false
   },
   foto: {
     type: String,
-    required: true
+    required: false
   },
   apellidop: {
     type: String,
-    required: true
+    required: false
   },
   apellidom: {
     type: String,
-    required: true
+    required: false
   },
   correo: {
     type: String,
@@ -29,11 +29,11 @@ const MaestroSchema = new mongoose.Schema({
   },
   matricula: {
     type: String,
-    required: true
+    required: false
   },
   password: {
     type: String,
-    required: true
+    required: false
   }
 });
 

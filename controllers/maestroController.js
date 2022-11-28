@@ -53,7 +53,7 @@ maestroController.post = async (req, res) => {
     var maestroExpect = {};
 
     const expectedParams = [
-      "nombre",
+      "nombreUsuario",
       "foto",
       "apellidop",
       "apellidom",
